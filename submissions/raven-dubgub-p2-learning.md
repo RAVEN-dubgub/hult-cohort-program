@@ -38,7 +38,9 @@ Reference API app registration (embedded — developer portal blocked, **no ALC 
 
 ## Metrics API snapshot (date-stamped)
 
-Captured **2026-08-08T20:42:57Z** from production:
+Captured **2026-08-08T21:06:12Z** from production (agent re-verified same day):
+
+**Ops (Aug 8):** Secret scan alert #1 **resolved** (`.env.example` placeholder on `main` `3833596`). Peer-review fixes pushed on pm #7/#8, comms #13, showcase #13. Showcase `preview/holoframe-bg-center` merged to `main` + prod redeploy.
 
 ```json
 {
@@ -47,9 +49,9 @@ Captured **2026-08-08T20:42:57Z** from production:
   "integration_route": "PitchRise documented API + embedded cohort reference API (developer portal blocked — no ALC bypass)",
   "pitchrise_api_health": { "status": "ok" },
   "metrics": {
-    "unique_users": 0,
-    "qualified_users": 0,
-    "snapshot_at": "2026-08-08T20:42:57.891Z"
+    "unique_users": 2,
+    "qualified_users": 2,
+    "snapshot_at": "2026-08-08T21:06:12.505Z"
   }
 }
 ```
@@ -103,7 +105,7 @@ Browser → Next.js (Vercel) → Neon (progress + reference events)
 
 ## Known limitations
 
-- `qualified_users` is 0 at submission snapshot — external promotion still in progress toward ≥25 pass gate
+- `qualified_users` is 2 at Aug 8 snapshot — external promotion still in progress toward ≥25 pass gate
 - PitchRise `/webhooks` requires authenticated Firebase session; unsigned sessions still record reference API events
 - Developer portal OAuth path not used (blocked / no $10k bypass)
 
@@ -114,4 +116,4 @@ Browser → Next.js (Vercel) → Neon (progress + reference events)
 - [x] PitchRise `/api/health` reachable from app
 - [x] Reference API registration auto-created on first metrics call
 - [ ] Joshua: Firebase sign-in smoke test on production
-- [ ] External user promotion toward ≥25 qualified users
+- [ ] External user promotion toward ≥25 qualified users (2 qualified at Aug 8 snapshot)
